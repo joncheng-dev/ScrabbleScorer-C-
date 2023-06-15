@@ -17,5 +17,11 @@ namespace ScrabbleScorer.Models
     {
       return _userEnteredString;
     }
+
+    // Set method
+    public void SetUserEnteredString(string newString)
+    {
+      _userEnteredString = newString;
+    }
   }
 }

@@ -25,5 +25,17 @@ namespace ScrabbleScorer.Tests
       //Assert
       Assert.AreEqual(someWord, result);
     }
+
+    [TestMethod]
+    public void SetUserEnteredString_SetsUserEnteredString_Void()
+    {
+      //Arrange
+      Word newWord = new Word("BLE");
+      string aString = "SCRAM";
+      //Act
+      newWord.SetUserEnteredString(aString);
+      //Assert
+      Assert.AreEqual(aString, newWord.GetUserEnteredString());
+    }    
   }
 }
