@@ -4,7 +4,7 @@ namespace ScrabbleScorer.Models
   public class Word
   {
     private string _userEnteredString;
-    public int WordScore { get; }
+    public int WordScore { get; set; }
 
     // Constructor
     public Word(string someString, int someScoreValue)

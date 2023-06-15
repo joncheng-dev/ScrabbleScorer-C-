@@ -52,5 +52,17 @@ namespace ScrabbleScorer.Tests
       //Assert
       Assert.AreEqual(aScoreValue, result);
     }
+
+    [TestMethod]
+    public void SetWordScore_SetsWordScore_Void()
+    {
+      //Arrange
+      Word newWord = new Word("BLE", 10);
+      int aNewScoreValue = 500;
+      //Act
+      newWord.WordScore = aNewScoreValue;
+      //Assert
+      Assert.AreEqual(aNewScoreValue, newWord.WordScore);
+    }
   }
 }
