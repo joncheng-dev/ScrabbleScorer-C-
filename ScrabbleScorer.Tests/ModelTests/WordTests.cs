@@ -9,8 +9,21 @@ namespace ScrabbleScorer.Tests
     [TestMethod]
     public void WordConstructor_CreatesInstanceOfWord_Word()
     {
-      Word newWord = new Word();
+      string testString = "HELLO";
+      Word newWord = new Word(testString);
       Assert.AreEqual(typeof(Word), newWord.GetType());
+    }
+
+    [TestMethod]
+    public void GetUserEnteredString_ReturnUserEnteredString_String()
+    {
+      //Arrange
+      string someWord = "SCRAM";
+      Word newWord = new Word(someWord);
+      //Act
+      string result = newWord.GetUserEnteredString();
+      //Assert
+      Assert.AreEqual(someWord, result);
     }
   }
 }

@@ -3,12 +3,19 @@ namespace ScrabbleScorer.Models
 {
   public class Word
   {
-    public string userEnteredString;
+    private string _userEnteredString;
     public int wordScore;
 
-    public Word()
+    // Constructor
+    public Word(string someString)
     {
+      _userEnteredString = someString;
+    }
 
+    // Get method
+    public string GetUserEnteredString()
+    {
+      return _userEnteredString;
     }
   }
 }
