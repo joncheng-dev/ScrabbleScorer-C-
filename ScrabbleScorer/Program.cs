@@ -7,12 +7,12 @@ namespace ScrabbleScorer
   {
     static void Main()
     {
-      // Word testWord = new Word();
-      // Console.WriteLine(testWord.GetType());
+      Word testWord = new Word("SPARK");
+      Console.WriteLine(testWord.GetType());
 
-      // testWord.userEnteredString = "COURAGE";
+      testWord.SetUserEnteredString("COURAGE");
 
-      // Console.WriteLine($"First word is: {testWord.userEnteredString}");
+      Console.WriteLine($"First word is: {testWord.GetUserEnteredString()}");
     }
   }
 }
