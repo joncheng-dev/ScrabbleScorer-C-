@@ -7,7 +7,7 @@ namespace ScrabbleScorer
   {
     static void Main()
     {
-      Word testWord = new Word("SPARK", 1);
+      Word testWord = new Word("SPARK");
       Console.WriteLine(testWord.GetType());
 
       testWord.SetUserEnteredString("COURAGE");

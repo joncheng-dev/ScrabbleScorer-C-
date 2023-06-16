@@ -64,5 +64,18 @@ namespace ScrabbleScorer.Tests
       //Assert
       Assert.AreEqual(aNewScoreValue, newWord.WordScore);
     }
+
+    [TestMethod]
+    public void ScoreCounter_ReturnsWordScore_Void()
+    {
+      //Arrange
+      Word newWord = new Word("A");
+      int actualWordScore = 1;
+      //Act
+      int methodResult = newWord.ScoreCounter(newWord.GetUserEnteredString());
+      //Assert
+      Assert.AreEqual(actualWordScore, methodResult);
+    } 
+
   }
 }

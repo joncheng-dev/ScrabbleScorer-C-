@@ -30,6 +30,11 @@ namespace ScrabbleScorer.Models
       _userEnteredString = newString;
     }
 
+    public int ScoreCounter(string stringAlphasOnly)
+    {
+      return 1;
+    }
+
     static Dictionary<char, int> letterScoreTable = new Dictionary<char, int>()
     {
       {'A', 1},
