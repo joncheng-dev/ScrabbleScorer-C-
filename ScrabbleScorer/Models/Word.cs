@@ -32,7 +32,17 @@ namespace ScrabbleScorer.Models
 
     public int ScoreCounter(string stringAlphasOnly)
     {
-      return 1;
+      // Set up
+      int score = 0;
+      string capitalizedString = stringAlphasOnly.ToUpper();
+      // Calculate
+      for (int i = 0; i < capitalizedString.Length; i++)
+      {
+        Word.letterScoreTable.TryGetValue(capitalizedString[i], out int characterPointValue);
+        score += characterPointValue;
+      }
+      // Return result
+      return score;
     }
 
     static Dictionary<char, int> letterScoreTable = new Dictionary<char, int>()
