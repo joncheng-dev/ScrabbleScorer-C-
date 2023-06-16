@@ -66,11 +66,23 @@ namespace ScrabbleScorer.Tests
     }
 
     [TestMethod]
-    public void ScoreCounter_ReturnsWordScore_Void()
+    public void ScoreCounter_ReturnsWordScoreForA_Void()
     {
       //Arrange
       Word newWord = new Word("A");
       int actualWordScore = 1;
+      //Act
+      int methodResult = newWord.ScoreCounter(newWord.GetUserEnteredString());
+      //Assert
+      Assert.AreEqual(actualWordScore, methodResult);
+    } 
+
+    [TestMethod]
+    public void ScoreCounter_ReturnsWordScoreForHELLO_Void()
+    {
+      //Arrange
+      Word newWord = new Word("HELLO");
+      int actualWordScore = 8;
       //Act
       int methodResult = newWord.ScoreCounter(newWord.GetUserEnteredString());
       //Assert
