@@ -89,5 +89,17 @@ namespace ScrabbleScorer.Tests
       Assert.AreEqual(actualWordScore, methodResult);
     } 
 
+    [TestMethod]
+    public void ScoreCounter_ReturnsWordScoreForFUZZY_Void()
+    {
+      //Arrange
+      Word newWord = new Word("FUZZY");
+      int actualWordScore = 29;
+      //Act
+      int methodResult = newWord.ScoreCounter(newWord.GetUserEnteredString());
+      //Assert
+      Assert.AreEqual(actualWordScore, methodResult);
+    } 
+
   }
 }
