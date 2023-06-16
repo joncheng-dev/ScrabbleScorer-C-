@@ -30,6 +30,11 @@ namespace ScrabbleScorer.Models
       _userEnteredString = newString;
     }
 
+    public bool InputVerifier(string someString)
+    {
+      return true;
+    }
+
     public int ScoreCounter(string stringAlphasOnly)
     {
       // Set up

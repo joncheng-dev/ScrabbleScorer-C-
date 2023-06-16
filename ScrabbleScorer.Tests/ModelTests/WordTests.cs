@@ -101,5 +101,16 @@ namespace ScrabbleScorer.Tests
       Assert.AreEqual(actualWordScore, methodResult);
     } 
 
+    [TestMethod]
+    public void InputVerifier_ReturnsTrueIfAlphaOnlyFalseIfNot_Void()
+    {
+      //Arrange
+      Word newWord = new Word("FUZZY");
+      //Act
+      bool result = newWord.InputVerifier(newWord.GetUserEnteredString());
+      //Assert
+      Assert.AreEqual(result, true);
+    }
+
   }
 }
