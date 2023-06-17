@@ -123,5 +123,27 @@ namespace ScrabbleScorer.Tests
       Assert.AreEqual(false, result);
     }
 
+    [TestMethod]
+    public void InputVerifier_ReturnsTrueIfAlphaOnlyFalseIfNotH3LL0_Void()
+    {
+      //Arrange
+      Word newWord = new Word("H3LL0");
+      //Act
+      bool result = newWord.InputVerifier(newWord.GetUserEnteredString());
+      //Assert
+      Assert.AreEqual(false, result);
+    }
+
+    [TestMethod]
+    public void InputVerifier_ReturnsTrueIfAlphaOnlyFalseIfNotcamping_Void()
+    {
+      //Arrange
+      Word newWord = new Word("camping");
+      //Act
+      bool result = newWord.InputVerifier(newWord.GetUserEnteredString());
+      //Assert
+      Assert.AreEqual(true, result);
+    }
+
   }
 }
