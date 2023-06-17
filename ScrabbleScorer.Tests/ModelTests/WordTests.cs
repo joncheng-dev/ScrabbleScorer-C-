@@ -102,14 +102,25 @@ namespace ScrabbleScorer.Tests
     } 
 
     [TestMethod]
-    public void InputVerifier_ReturnsTrueIfAlphaOnlyFalseIfNot_Void()
+    public void InputVerifier_ReturnsTrueIfAlphaOnlyFalseIfNotFUZZY_Void()
     {
       //Arrange
       Word newWord = new Word("FUZZY");
       //Act
       bool result = newWord.InputVerifier(newWord.GetUserEnteredString());
       //Assert
-      Assert.AreEqual(result, true);
+      Assert.AreEqual(true, result);
+    }
+
+    [TestMethod]
+    public void InputVerifier_ReturnsTrueIfAlphaOnlyFalseIfNotHITHERE_Void()
+    {
+      //Arrange
+      Word newWord = new Word("HI THERE");
+      //Act
+      bool result = newWord.InputVerifier(newWord.GetUserEnteredString());
+      //Assert
+      Assert.AreEqual(false, result);
     }
 
   }

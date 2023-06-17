@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ScrabbleScorer.Models
 {
@@ -32,7 +34,8 @@ namespace ScrabbleScorer.Models
 
     public bool InputVerifier(string someString)
     {
-      return true;
+      bool isAlpha = someString.All(Char.IsLetter);
+      return isAlpha;
     }
 
     public int ScoreCounter(string stringAlphasOnly)
