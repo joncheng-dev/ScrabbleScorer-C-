@@ -7,12 +7,29 @@ namespace ScrabbleScorer
   {
     static void Main()
     {
-      Word testWord = new Word("SPARK");
-      Console.WriteLine(testWord.GetType());
+      bool? validInput = null;
+      do
+      {
+        Console.WriteLine("*~*~*~*~*~**~*~*~*~*~**~*~*~*~**~*~*~*~*~*~**~*~*~*~*~*~**~*~*~*~*~**~*~*~*~*~*~*~*");
+        Console.WriteLine("Enter a word -- alphabet characters, no spaces -- to calculate its Scrabble score: ");
+        Console.WriteLine("*~*~*~*~*~**~*~*~*~*~**~*~*~*~**~*~*~*~*~*~**~*~*~*~*~*~**~*~*~*~*~**~*~*~*~*~*~*~*");
 
-      testWord.SetUserEnteredString("COURAGE");
+        Word userEnteredWord = new Word(Console.ReadLine());
 
-      Console.WriteLine($"First word is: {testWord.GetUserEnteredString()}");
+        Console.WriteLine($"The word you entered is: {userEnteredWord.GetUserEnteredString()}");
+
+        if (userEnteredWord.InputVerifier(userEnteredWord.GetUserEnteredString()))
+        {
+          validInput = true;
+          int result = userEnteredWord.ScoreCounter(userEnteredWord.GetUserEnteredString());
+          Console.WriteLine($"{userEnteredWord.GetUserEnteredString()} has {result} points");
+        }
+        else
+        {
+          Console.WriteLine("Invalid entry. Enter a word -- alphabet characters only, no spaces: ");
+        }
+      }
+      while (validInput != true);
     }
   }
 }
